@@ -15,6 +15,11 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+// Add root route handler
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to the News App API!' });
+});
+
 app.use('/api/v1', api);
 
 app.use(middlewares.notFound);
