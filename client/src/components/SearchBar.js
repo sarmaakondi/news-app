@@ -15,7 +15,7 @@ const SearchBar = ({ onSearch }) => {
             onSearch(response.data);
         } catch (error) {
             console.error("Search error:", error);
-            onSearch([], error);
+            onSearch([]);
         }
     }, 500);
 
