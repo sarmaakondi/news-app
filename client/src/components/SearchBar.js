@@ -6,7 +6,6 @@ const SearchBar = ({ onSearch }) => {
     const [query, setQuery] = useState("");
 
     const debouncedSearch = debounce(async (searchTerm) => {
-        console.log(process.env.REACT_APP_API_URL);
         try {
             const response = await axios.get(process.env.REACT_APP_API_URL, {
                 params: {
