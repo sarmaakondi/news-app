@@ -1,4 +1,4 @@
-const ArticleList = () => {
+const ArticleList = ({ articles }) => {
     return (
         <div>
             <h2>Articles</h2>
