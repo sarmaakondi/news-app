@@ -1,6 +1,6 @@
 import formatDate from "../utils";
 
-const ArticleList = ({ articles }) => {
+const ArticleList = ({ articles, onPin }) => {
     const groupedArticles = articles.reduce((acc, article) => {
         const section = article.section || "Uncategorized";
         acc[section] = acc[section] || [];
@@ -27,7 +27,7 @@ const ArticleList = ({ articles }) => {
                                     "en-GB"
                                 )}
                             </p>
-                            <button>Pin</button>
+                            <button onClick={() => onPin(article)}>Pin</button>
                         </div>
                     ))}
                 </div>

@@ -8,13 +8,24 @@ import "./App.css";
 
 function App() {
     const [searchResults, setSearchResults] = useState([]);
+    const [pinned, setPinned] = useState([]);
+
+    const handlePin = (article) => {
+        if (!pinned.some((a) => a.id === article.id)) {
+            setPinned([...pinned, article]);
+        }
+    };
+
+    const handleUnPin = (article) => {
+        setPinned(pinned.filter((a) => a.id !== article.id));
+    };
 
     return (
         <div className="App">
             <h1>News Search</h1>
             <SearchBar onSearch={setSearchResults} />
-            <ArticleList articles={searchResults} />
-            <PinnedArticles />
+            <ArticleList articles={searchResults} onPin={handlePin} />
+            <PinnedArticles pinned={pinned} onUnPin={handleUnPin} />
         </div>
     );
 }
