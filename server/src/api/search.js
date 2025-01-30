@@ -6,6 +6,7 @@ const router = express.Router();
 const GUARDIAN_API = 'https://content.guardianapis.com/search';
 const API_KEY = process.env.GUARDIAN_API_KEY;
 
+// eslint-disable-next-line consistent-return
 router.get('/', async (req, res, next) => {
   try {
     const { q: searchTerm } = req.query;
