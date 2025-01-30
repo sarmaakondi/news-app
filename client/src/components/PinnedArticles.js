@@ -1,9 +1,9 @@
 const PinnedArticles = ({ pinned, onUnPin }) => {
     return (
-        <div>
+        <div className="pinned">
             <h2>Pinned Articles</h2>
             {pinned.map((article) => (
-                <div key={article.id}>
+                <div key={article.id} className="pinned-article">
                     <a
                         href={article.url}
                         target="_blank"
@@ -11,7 +11,12 @@ const PinnedArticles = ({ pinned, onUnPin }) => {
                     >
                         {article.title}
                     </a>
-                    <button onClick={() => onUnPin(article)}>Unpin</button>
+                    <button
+                        onClick={() => onUnPin(article)}
+                        className="unpin-button"
+                    >
+                        Unpin
+                    </button>
                 </div>
             ))}
         </div>

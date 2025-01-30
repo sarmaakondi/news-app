@@ -29,6 +29,7 @@ const SearchBar = ({ onSearch }) => {
 
     return (
         <input
+            id="search-input"
             type="text"
             placeholder="Search articles..."
             value={query}

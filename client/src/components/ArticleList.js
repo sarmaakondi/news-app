@@ -9,12 +9,12 @@ const ArticleList = ({ articles, onPin }) => {
     }, {});
 
     return (
-        <div>
+        <div className="results">
             {Object.entries(groupedArticles).map(([section, items]) => (
                 <div key={section}>
                     <h2>{section}</h2>
                     {items.map((article) => (
-                        <div key={article.id}>
+                        <div key={article.id} className="article">
                             <a
                                 href={article.url}
                                 target="_blank"
