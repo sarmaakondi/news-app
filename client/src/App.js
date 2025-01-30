@@ -8,6 +8,7 @@ import "./App.css";
 
 function App() {
     const [searchResults, setSearchResults] = useState([]);
+
     return (
         <div className="App">
             <h1>News Search</h1>
