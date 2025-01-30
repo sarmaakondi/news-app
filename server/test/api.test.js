@@ -18,4 +18,12 @@ describe('GET /api/v1/search', () => {
       .expect('Content-Type', /json/)
       .expect(400, done);
   });
+
+  it('responds with 404 when no aritcles found for the given search term', (done) => {
+    request(app)
+      .get('/api/v1/search?q=???')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(404, done);
+  });
 });

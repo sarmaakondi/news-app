@@ -21,7 +21,14 @@ router.get('/', async (req, res, next) => {
       },
     });
 
-    const articles = response.data.response.results.map((article) => ({
+    const { results } = response.data.response;
+    if (!results || results.length === 0) {
+      return res.status(404).json({
+        message: 'No articles found for the given search term.',
+      });
+    }
+
+    const articles = results.map((article) => ({
       id: article.id,
       title: article.webTitle,
       url: article.webUrl,
